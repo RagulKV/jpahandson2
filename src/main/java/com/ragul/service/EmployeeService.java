@@ -1,5 +1,7 @@
 package com.ragul.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +28,21 @@ public class EmployeeService {
 		return er.findById(i).get();
 	}
 
+	
+	@Transactional
+	public List<Employee> getAllPermanentEmployees(){
+		return er.getAllPermanentEmployees();
+	}
+	
+	@Transactional
+	public List<Employee> getAllEmployeesNative(){
+		return er.getAllEmployeesNative();
+	}
+	
+	@Transactional
+	public double getAverageSalary(int id){
+		return er.getAverageSalary(id);
+	}
+	
 
 }
